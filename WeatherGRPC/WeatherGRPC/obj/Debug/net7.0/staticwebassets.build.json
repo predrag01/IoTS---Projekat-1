@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "xM+EBLzawi6w/VGLIvvxJJp1xZBy5Mmg/X8ASPwVveA=",
+  "Source": "WeatherGRPC",
+  "BasePath": "_content/WeatherGRPC",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

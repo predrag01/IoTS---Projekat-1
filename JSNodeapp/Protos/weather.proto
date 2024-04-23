@@ -1,0 +1,44 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+import "google/protobuf/timestamp.proto";
+
+option csharp_namespace = "WeatherGRPC";
+
+package weather;
+
+// The greeting service definition.
+service Weather {
+  rpc GetAllData(EmptyMessage) returns (stream WeatherValues);
+  rpc GetWeatherById(WeatherId) returns (WeatherValues);
+  rpc AddWeather(WeatherValues) returns (WeatherValues);
+  rpc UpdateWeather(WeatherValues) returns (WeatherValues);
+  rpc DeleteWeather(WeatherId) returns (EmptyMessage);
+}
+
+message EmptyMessage {}
+
+message WeatherValues {
+	string stationName = 2;
+	google.protobuf.Timestamp measurementTimestamp = 3;
+	float airTemeparute = 4;
+	float wetBulbTemperature=5;
+	int32 humidity=6;
+	float rainIntensity = 7;
+	float intervalRain = 8;
+	float totalRain = 9;
+	int32 precipitationType = 10;
+	float windDirection = 11;
+	float windSpeed = 12;
+	float maximumWindSpeed = 13;
+	float biometricPressure = 14;
+	int32 solarRadiation = 15;
+	int32 heading = 16;
+	float batteryLife = 17;
+	google.protobuf.Timestamp measurementTimestampLabel = 18;
+	string measurementId = 1;
+}
+
+message WeatherId {
+	string measurementId = 1;
+}
